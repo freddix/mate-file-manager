@@ -1,7 +1,7 @@
 Summary:	File manager for the MATE desktop environment
 Name:		mate-file-manager
 Version:	1.6.2
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
@@ -27,9 +27,19 @@ Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	shared-mime-info
 Requires(post,postun):	glib-gio-gsettings
 Requires:	gdk-pixbuf-rsvg
-Requires:	gvfs
+Requires:	gvfs-fuse
 Requires:	mate-desktop
 Requires:	xdg-icon-theme
+# for previewing audio files
+Suggests:	gstreamer010
+Suggests:	gstreamer010-plugins-base
+Suggests:	gstreamer010-plugins-good
+# useful gvfs backends
+Suggests:	gvfs-archive
+Suggests:	gvfs-cdio
+Suggests:	gvfs-gphoto2
+Suggests:	gvfs-mtp
+Suggests:	gvfs-smb
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -93,6 +103,8 @@ install -d $RPM_BUILD_ROOT%{_libdir}/caja/extensions-2.0
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/MateConf/gsettings/*.convert
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,en@shaw,crh,ha,ig,io,ps}
 
 %find_lang caja
