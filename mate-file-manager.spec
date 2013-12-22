@@ -1,11 +1,11 @@
 Summary:	File manager for the MATE desktop environment
 Name:		mate-file-manager
-Version:	1.6.2
-Release:	2
+Version:	1.6.3
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	69a3c8abc36a9c7333b3ce370cea2bdb
+# Source0-md5:	3925e589ef3365a4d59ce8cca6db946e
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -139,7 +139,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/caja/extensions-2.0
 %{_datadir}/caja
 %{_datadir}/glib-2.0/schemas/org.mate.*.gschema.xml
-%{_datadir}/mate-file-manager
 %{_datadir}/mime/packages/*.xml
 
 %{_desktopdir}/caja-autorun-software.desktop
@@ -153,6 +152,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/caja
 %{_iconsdir}/hicolor/*/apps/caja.png
 %{_iconsdir}/hicolor/*/apps/caja.svg
+%{_iconsdir}/hicolor/*/emblems/*.png
 %{_datadir}/dbus-1/services/org.mate.freedesktop.FileManager1.service
 
 %{_mandir}/man1/caja*.1*
