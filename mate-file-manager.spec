@@ -1,11 +1,11 @@
 Summary:	File manager for the MATE desktop environment
 Name:		mate-file-manager
-Version:	1.6.3
+Version:	1.6.4
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	3925e589ef3365a4d59ce8cca6db946e
+# Source0-md5:	da21d4c8d99510a42e7c9b9f9a4366c3
 URL:		http://wiki.mate-desktop.org/mate-file-manager
 BuildRequires:	autoconf
 BuildRequires:	automake
